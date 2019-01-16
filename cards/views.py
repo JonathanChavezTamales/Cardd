@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Card
 from .forms import CardForm
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 def all_cards_view(request):
@@ -21,7 +21,7 @@ def new_card_view(request):
         if form.is_valid:
             card = form.save(commit=False)
             card.save()
-            return HttpResponse("Guardada")
+            return HttpResponseRedirect("home")
 
 
     else:

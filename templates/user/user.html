@@ -2,13 +2,34 @@
 
 {% block content %}
 
-<h2>{{user.first_name}}'s Cards</h2>
+<div class="row">
 
-{% for card in cards %}
+  <div class="col-sm-4">
+    <img class="" src="{{user.profile_pic.url}}" alt="" width="200px" height="200px" style="border-radius: 50%; border: 2px solid;">
 
-{% include 'cards/card_element.html' %}
+    <hr>
+    <div class="ml-2 ">
+      <h2>{{user.first_name}}'s Cards</h2>
+    </div>
 
-{% endfor %}
+  </div>
+
+
+  <div class="col-sm-8">
+
+    {% for card in cards %}
+
+    {% include 'cards/card_element.html' %}
+
+    {% endfor %}
+
+  </div>
+
+
+
+
+</div>
+
 
 
 {% endblock %}
