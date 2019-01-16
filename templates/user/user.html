@@ -1,0 +1,14 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+<h2>{{user.first_name}}'s Cards</h2>
+
+{% for card in cards %}
+
+{% include 'cards/card_element.html' %}
+
+{% endfor %}
+
+
+{% endblock %}
