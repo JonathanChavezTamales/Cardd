@@ -4,8 +4,11 @@
 
 <div class="login" style="text-align: center;">
   <div class="box text-center" style="width: 40%; border: 3px solid; display: inline-block;">
-    <h2>Inicia sesión</h2>
-    {form.as_p}
+    <h2>Register</h2>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" name="" value="Register!">
+    </form>
   </div>
 </div>
 
