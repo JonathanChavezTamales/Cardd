@@ -2,26 +2,12 @@
 
 {% block content %}
 
+<h1>Home</h1>
 
 {% for card in cards %}
 
 
-<div class="mt-4">
-  <div class="card">
-    <div class="front">
-      <div class="logo"><span></span></div>
-    </div>
-    <div class="back">
-      <h1>{{card.name}}</h1>
-      <small><span>design <i>&</i> photography</span></small>
-      <ul>
-        <li>{{card.phone}}</li>
-        <li>{{card.email}}</li>
-        <li>{{card.company}}</li>
-        </ul>
-    </div>
-  </div>
-</div>
+{% include 'cards/card_element.html' %}
 
 {% endfor %}
 
