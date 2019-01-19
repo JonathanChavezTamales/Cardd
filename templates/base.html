@@ -18,11 +18,18 @@
         <a class="nav-link" href="/new_card">+ New card</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/user?id=7">My profile</a>
+        <a class="nav-link" href="/me">My profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/signup">Login/Signup</a>
       </li>
+
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+
+      {% endif %}
 
     </ul>
   </nav>

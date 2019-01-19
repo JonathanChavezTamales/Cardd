@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from cards.views import all_cards_view, new_card_view
-from user.views import user_view, signup_view
+from user.views import my_user_view, signup_view, user_view
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
 
@@ -31,7 +31,8 @@ urlpatterns = [
     path('', all_cards_view),
 
     #User
-    path('user', user_view),
+    path('me', my_user_view),
+    path('user/<int:uid>', user_view),
     path('signup', signup_view),
 
     #Cards
@@ -43,7 +44,3 @@ urlpatterns = [
     url(r'^oauth/', include('social_django.urls', namespace='social')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'home'
