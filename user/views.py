@@ -13,7 +13,7 @@ def my_user_view(request):
 
             user = User.objects.get(id = request.user.id)
             detailed_user = UserSocialAuth.objects.get(id = request.user.id)
-            cards = Card.objects.filter(user=user)
+            cards = Card.objects.filter(user=user).order_by('-date')
 
             ctx = {
                 'user':user,
@@ -32,9 +32,9 @@ def my_user_view(request):
 
 def user_view(request, uid):
 
-
+        
         user = User.objects.filter(id = uid)
-        cards = Card.objects.filter(user__in=user)
+        cards = Card.objects.filter(user__in=user).order_by('-date')
 
         ctx = {
             'user':user,
