@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = keys.secret
+SECRET_KEY = 'i0)q-u8a*+o_j_j=rw4#d+a_c+lz_^7(%pi(ltbuuavr3_+zo2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -148,5 +148,5 @@ LOGOUT_REDIRECT_URL = '/home'
 
 #Keys
 
-SOCIAL_AUTH_TWITTER_KEY = keys.twitter_key
-SOCIAL_AUTH_TWITTER_SECRET = keys.twitter_secret
+SOCIAL_AUTH_TWITTER_KEY = 'KU6ZE7kMU6ZI5DtrksjxIdst0'
+SOCIAL_AUTH_TWITTER_SECRET = 't1WXCfPExw5FApFm4jJuap9MMsCmNX1rII8I77f6H9X9aQRIit'
