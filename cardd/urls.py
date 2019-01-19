@@ -18,13 +18,29 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from cards.views import all_cards_view, new_card_view
-from user.views import user_view, signup_view
+from user.views import my_user_view, signup_view, user_view
+from django.conf.urls import url, include
+from django.contrib.auth import views as auth_views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('home', all_cards_view),
-    path('user', user_view),
+    path('', all_cards_view),
+
+    #User
+    path('me', my_user_view),
+    path('user/<int:uid>', user_view),
+    path('signup', signup_view),
+
+    #Cards
     path('new_card', new_card_view),
-    path('signup', signup_view)
+
+    #social
+    path('login', auth_views.login),
+    path('logout', auth_views.logout),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

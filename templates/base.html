@@ -10,10 +10,33 @@
 <body>
   <nav class="navbar expand-lg navbar-dark bg-dark">
     <span class="navbar-brand mb-0 h1">Cardd.io</span>
+
+    <form class="" method="">
+      <input type="text" name="id" value="" placeholder="Busca">
+      <input type="submit" name="" value="buscar">
+    </form>
+
     <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/new_card">+ New card</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/me">My profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Login/Signup</a>
+      </li>
+
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+
+      {% endif %}
+
     </ul>
   </nav>
 
