@@ -11,5 +11,4 @@ class CardForm(forms.ModelForm):
             'company',
             'phone',
             'isPublic',
-            'user'
         ]
