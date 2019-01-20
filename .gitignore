@@ -1,4 +1,10 @@
 .venv
 *.pyc
 __pycache__/
-
+*.jpeg
+*.jpg
+*.png
+*.sqlite3
+*.swp
+now.json
+keys.py

@@ -1,0 +1,36 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+  <div class="col-sm-4">
+    <img class=""
+    src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original" alt="" width="200px" height="200px" style="border-radius: 50%; border: 2px solid;">
+
+    <hr>
+    <div class="ml-2 ">
+      <h2>{{user.username}}'s Cards</h2>
+    </div>
+
+  </div>
+
+
+  <div class="col-sm-8">
+
+    {% for card in cards %}
+
+    {% include 'cards/card_element.html' %}
+
+    {% endfor %}
+
+  </div>
+
+
+
+
+</div>
+
+
+
+{% endblock %}
