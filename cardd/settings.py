@@ -154,4 +154,9 @@ SOCIAL_AUTH_TWITTER_SECRET = keys.twitter_secret
 SECRET_KEY = keys.secret
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
