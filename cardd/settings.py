@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import keys
 import django_heroku
 
 
@@ -148,12 +147,12 @@ LOGOUT_REDIRECT_URL = '/home'
 
 #Keys
 
-SOCIAL_AUTH_TWITTER_KEY = keys.twitter_key
-SOCIAL_AUTH_TWITTER_SECRET = keys.twitter_secret
+SOCIAL_AUTH_TWITTER_KEY = os.environ.get('TWITTER_KEY')
+SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('TWITTER_SECRET')
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = keys.secret
+SECRET_KEY = os.environ.get('SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
