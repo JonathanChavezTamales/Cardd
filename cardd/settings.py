@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+<<<<<<< HEAD
+import django_heroku
+
+=======
+>>>>>>> 23046fd696a326c4fdf758ce9c2e47968b10461e
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,6 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
+<<<<<<< HEAD
+
+ALLOWED_HOSTS = ['https://protected-citadel-21529.herokuapp.com/']
+=======
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'i0)q-u8a*+o_j_j=rw4#d+a_c+lz_^7(%pi(ltbuuavr3_+zo2'
 
@@ -26,6 +35,7 @@ SECRET_KEY = 'i0)q-u8a*+o_j_j=rw4#d+a_c+lz_^7(%pi(ltbuuavr3_+zo2'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+>>>>>>> 23046fd696a326c4fdf758ce9c2e47968b10461e
 
 
 # Application definition
@@ -145,8 +155,21 @@ LOGIN_REDIRECT_URL = '/home'
 LOGOUT_REDIRECT_URL = '/home'
 
 
+## PRODUCTION
+
 
 #Keys
 
-SOCIAL_AUTH_TWITTER_KEY = 'KU6ZE7kMU6ZI5DtrksjxIdst0'
-SOCIAL_AUTH_TWITTER_SECRET = 't1WXCfPExw5FApFm4jJuap9MMsCmNX1rII8I77f6H9X9aQRIit'
+SOCIAL_AUTH_TWITTER_KEY = os.environ.get('TWITTER_KEY')
+SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('TWITTER_SECRET')
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'i0)q-u8a*+o_j_j=rw4#d+a_c+lz_^7(%pi(ltbuuavr3_+zo2'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+
+# Configure Django App for Heroku.
+django_heroku.settings(locals())
