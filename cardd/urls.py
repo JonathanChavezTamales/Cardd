@@ -39,8 +39,8 @@ urlpatterns = [
     path('new_card', new_card_view),
 
     #social
-    path('login', auth_views.LoginView),
-    path('logout', auth_views.LogoutView),
+    path('login', auth_views.login),
+    path('logout', auth_views.logout),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
