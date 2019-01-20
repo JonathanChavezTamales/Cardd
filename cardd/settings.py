@@ -152,10 +152,10 @@ SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('TWITTER_SECRET')
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET')
+SECRET_KEY = 'i0)q-u8a*+o_j_j=rw4#d+a_c+lz_^7(%pi(ltbuuavr3_+zo2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 # Configure Django App for Heroku.
