@@ -3,7 +3,6 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from social_django.models import UserSocialAuth
 from cards.models import Card
-from .forms import CreateUserForm
 # Create your views here.
 
 def my_user_view(request):
@@ -32,7 +31,7 @@ def my_user_view(request):
 
 def user_view(request, uid):
 
-        
+
         user = User.objects.filter(id = uid)
         cards = Card.objects.filter(user__in=user).order_by('-date')
 
@@ -48,13 +47,4 @@ def user_view(request, uid):
 
 def signup_view(request):
 
-    if request.method == "POST":
-        form = CreateUserForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(f'/home')
-
-    else:
-        form = CreateUserForm()
-
-    return render(request, "user/signup.html", {'form':form})
+    return render(request, "user/signup.html", {})
