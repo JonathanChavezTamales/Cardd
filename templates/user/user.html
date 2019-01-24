@@ -5,8 +5,16 @@
 <div class="row">
 
   <div class="col-sm-4">
+    {%if detailed.extra_data.access_token.screen_name != null %}
     <img class=""
-    src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original" alt="" width="200px" height="200px" style="border-radius: 50%; border: 2px solid;">
+    src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original"
+     alt="" width="200px" height="200px" style="border-radius: 50%; border: 2px solid;">
+    {%endif%}
+    {%if detailed.extra_data.access_token.screen_name == null %}
+    <img src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
+     alt="" width="200px" height="200px" style="border-radius: 50%; border: 2px solid;">
+
+    {%endif%}
 
     <hr>
     <div class="ml-2 ">

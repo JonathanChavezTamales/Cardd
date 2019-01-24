@@ -5,11 +5,8 @@
 <div class="login" style="text-align: center;">
   <div class="box text-center" style="width: 40%; border: 3px solid; display: inline-block;">
     <h2>Register</h2>
-    <form method="post" enctype="multipart/form-data">{% csrf_token %}
-      {{form.as_p}}
-      <input type="submit" name="" value="Register!">
-    </form>
     <a href="{% url 'social:begin' 'twitter' %}">Login with Twitter</a>
+    <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
   </div>
 </div>
 
