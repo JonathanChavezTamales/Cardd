@@ -2,43 +2,47 @@
 
 {% block content %}
 
-<div class="row">
+<section class="profile">
+  <div id="profile_info">
 
-  <div class="col-sm-4">
-    {%if detailed.extra_data.access_token.screen_name != null %}
-    <img class=""
-    src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original"
-     alt="" width="200px" height="200px" style="border-radius: 50%; border: 2px solid;">
-    {%endif%}
-    {%if detailed.extra_data.access_token.screen_name == null %}
-    <img src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
-     alt="" width="200px" height="200px" style="border-radius: 50%; border: 2px solid;">
+      {%if detailed.extra_data.access_token.screen_name != null %}
 
-    {%endif%}
+      <img style="border-radius: 50%; box-shadow: 2px 4px 4px #888;" src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original" alt="User profile pic">
 
-    <hr>
-    <div class="ml-2 ">
-      <h2>{{user.username}}'s Cards</h2>
-    </div>
+      {% endif %}
 
+
+      {%if detailed.extra_data.access_token.screen_name == null %}
+
+      <img style="border-radius: 50%;" src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="User profile pic">
+
+      {% endif %}
+
+      <h3>{{user.username}}</h3>
+      <h4>User @ Cardd</h4>
+      <h5>Jalisco, Mexico</h5>
+
+      <div id="card-count">
+          <h3>{{cards.count}}</h3>
+          <h4>cards</h4>
+      </div>
   </div>
+  <div id="profile_cards">
 
+    {% if user.username == request.user.username %}
 
-  <div class="col-sm-8">
+    <button type="button" name="button" id="cards-add_card_button">
+      +
+    </button>
+
+    {% endif %}
 
     {% for card in cards %}
 
     {% include 'cards/card_element.html' %}
 
     {% endfor %}
-
   </div>
-
-
-
-
-</div>
-
-
+</section>
 
 {% endblock %}
