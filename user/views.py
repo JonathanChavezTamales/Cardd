@@ -19,8 +19,7 @@ def my_user_view(request):
                 'cards':cards,
                 'detailed':detailed_user
             }
-
-            print(dir(detailed_user))
+            
             return render(request,"user/user.html", ctx)
 
 
