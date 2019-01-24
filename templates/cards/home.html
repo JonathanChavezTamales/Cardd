@@ -2,16 +2,22 @@
 
 {% block content %}
 
-<h1>Home</h1>
+<section id="cards">
+    <div class="wrapper" id="wrapper-cards">
 
-<h4>Hello {{user.username}}</h4>
+        
 
-{% for card in cards %}
+        <button type="button" name="button" id="cards-add_card_button">
+          +
+        </button>
 
+        {% for card in cards %}
 
-{% include 'cards/card_element.html' %}
+        {% include 'cards/card_element.html' %}
 
-{% endfor %}
+        {% endfor %}
 
+    </div>
+  </section>
 
 {% endblock %}

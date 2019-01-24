@@ -1,0 +1,40 @@
+<div class="modal" id="modal_create-account">
+    <div class="modal-content">
+      <span class="close_button">&times;</span>
+      <h1>Add card</h1>
+
+      <div id="modal_inputs" style="text-align: center;">
+
+        <form class="" >{%csrf_token%}
+
+          <input type="text" class="modal_input" id="modal_input_name" placeholder="Name*">
+          <input type="text" class="modal_input" id="modal_input_position" placeholder="Current role*">
+          <input type="text" class="modal_input" id="modal_input_company" placeholder="Company*">
+          <input type="text" class="modal_input" id="modal_input_email" placeholder="Email*">
+          <input type="text" class="modal_input" id="modal_input_phone" placeholder="Phone number">
+
+          <div id="radio-buttons">
+            <input  id="isPublic" type="checkbox" name="card_state" value="Publics" checked>
+            <label for="isPublic">Public</label>
+          </div>
+
+          {% if user.is_authenticated == False %}
+
+          <hr>
+
+          <a href="/signup" id="modal_create-card">Create card</a>
+
+          {% endif %}
+
+          {% if user.is_authenticated == True %}
+
+          <button href="signup" id="modal_create-card">Create card</a>
+
+          {% endif %}
+
+
+        </form>
+
+      </div>
+    </div>
+  </div>

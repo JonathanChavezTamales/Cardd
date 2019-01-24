@@ -19,7 +19,7 @@ def my_user_view(request):
                 'cards':cards,
                 'detailed':detailed_user
             }
-            
+
             return render(request,"user/user.html", ctx)
 
 
@@ -30,8 +30,8 @@ def my_user_view(request):
 
 def user_view(request, uid):
 
-
         user = User.objects.filter(id = uid)
+        
         cards = Card.objects.filter(user__in=user).order_by('-date')
 
         ctx = {
