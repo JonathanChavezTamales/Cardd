@@ -6,5 +6,3 @@ __pycache__/
 *.png
 *.sqlite3
 *.swp
-now.json
-keys.py

@@ -1,0 +1,68 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+  <div class="col-sm-4">
+    {%if detailed.extra_data.access_token.screen_name != null %}
+    <img class=""
+    src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original"
+     alt="" width="200px" height="200px" style="border-radius: 50%; border: 2px solid;">
+    {%endif%}
+    {%if detailed.extra_data.access_token.screen_name == null %}
+    <img src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
+     alt="" width="200px" height="200px" style="border-radius: 50%; border: 2px solid;">
+
+    {%endif%}
+
+    <hr>
+    <div class="ml-2 ">
+      <h2>{{user.username}}'s Cards</h2>
+    </div>
+
+  </div>
+
+
+  <div class="col-sm-8">
+
+    {% for card in cards %}
+
+    {% include 'cards/card_element.html' %}
+
+    {% endfor %}
+
+  </div>
+
+
+
+
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="profile">
+  <div id="profile_info">
+      <img src="assets/img/profile-pic-cropped.png" alt="User profile pic">
+      <h3>Sebastian Crossa</h4>
+      <h4>Designer @ Cardd</h3>
+      <h5>Jalisco, Mexico</h4>
+
+      <div id="card-count">
+          <h3>7</h3>
+          <h4>cards</h4>
+      </div>
+  </div>
+  <div id="profile_cards">
+    {% for card in cards %}
+
+    {% include 'cards/card_element.html' %}
+
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
