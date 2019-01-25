@@ -5,11 +5,7 @@
 <section id="cards">
     <div class="wrapper" id="wrapper-cards">
 
-        
-
-        <button type="button" name="button" id="cards-add_card_button">
-          +
-        </button>
+        {% include 'cards/new_card_card.html' %}
 
         {% for card in cards %}
 

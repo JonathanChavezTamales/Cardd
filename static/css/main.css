@@ -303,7 +303,12 @@ hr {
   display: grid;
   grid-template-columns: repeat(2, auto); }
 
-#header #title {
+
+#header-left {
+  display: flex;
+}
+
+#cardd-title {
   margin: 25px 0;
   font-size: 30px;
   font-family: 'Open Sans', sans-serif;

@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{% static '/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <title>Cardd</title>
 </head>
 <body>
   <div id="header-background">
     <section id='header'>
       <div class="wrapper" id='navbar-wrapper'>
-        <span >
-          <a sty href="/home" id="title" >
-            <img class="logo-nav" src="{%static 'img/logo.png'%}">
-            <span>Cardd</span>
+        <div id="header-left">
+          <a href="/home" id="title" style="display: flex; height: 65px;" >
+            <img class="logo-nav" src="{% static 'img/logo_final.png'%}">
+            <h3 id="cardd-title" style="align-self: center; font-family: 'Open Sans', sans-serif; font-weight: 600">Cardd</h3>
           </a>
-        </span>
+        </div>
         <div id="header-right">
           <div class="search-container">
               <?xml version="1.0" encoding="iso-8859-1"?>
@@ -92,7 +92,9 @@
 
           {% if user.is_authenticated == False %}
 
-          <a href="signup">Login/Signup</a>
+          <a href="signup" style="display: flex; border-radius: 8px; height: 40px; width: 120px; background-image: linear-gradient(120deg, #8e2de2, #4a00e0); border: none;">
+            <p style="color: white; margin: auto; font-weight: 600; text-transform: uppercase;">JOIN US</p>
+          </a>
 
           {% endif %}
 
