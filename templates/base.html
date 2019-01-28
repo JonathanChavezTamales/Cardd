@@ -1,6 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,74 +9,80 @@
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <title>Cardd</title>
 </head>
+
 <body>
   <div id="header-background">
     <section id='header'>
       <div class="wrapper" id='navbar-wrapper'>
         <div id="header-left">
-          <a href="/home" id="title" style="display: flex; height: 65px; margin: 15px;" >
+          <a href="/home" id="title" style="display: flex; height: 65px; margin: 15px;">
             <img class="logo-nav" style="width: 100px;" src="{% static 'img/logo_final_2.png'%}">
             <h3 id="cardd-title" style="align-self: center; font-family: 'Open Sans', sans-serif; font-weight: 600">Cardd</h3>
           </a>
         </div>
         <div id="header-right">
           <div class="search-container">
-              <?xml version="1.0" encoding="iso-8859-1"?>
-              <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
-                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" fill="#053535"/>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-              </svg>
+            <?xml version="1.0" encoding="iso-8859-1"?>
+            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+              x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+              width="512px" height="512px">
+              <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
+                fill="#053535" />
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+            </svg>
 
-              <input id="input-field" type="text" placeholder="Search...">
+            <input id="input-field" type="text" placeholder="Search...">
           </div>
 
           {% if user.is_authenticated %}
 
           <div class="dropdown">
             <div class="dropdown_clickable">
-                <a href="javascript:void(0);" class="drop-button" onclick="displayDropdown()"></a>
+              <a href="javascript:void(0);" class="drop-button" onclick="displayDropdown()"></a>
 
-                {%if detailed.extra_data.access_token.screen_name != null %}
+              {%if detailed.extra_data.access_token.screen_name != null %}
 
 
-                <img style="border-radius: 50%;" src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original" alt="User profile pic">
+              <img style="border-radius: 50%;" src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original"
+                alt="User profile pic">
 
-                {% endif %}
+              {% endif %}
 
-                {%if detailed.extra_data.access_token.screen_name == null %}
-                <img style="border-radius: 50%;" src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="User profile pic">
+              {%if detailed.extra_data.access_token.screen_name == null %}
+              <img style="border-radius: 50%;" src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
+                alt="User profile pic">
 
-                {% endif %}
+              {% endif %}
 
             </div>
             <div class="dropdown-content" id="myDropdown">
@@ -93,7 +100,7 @@
           {% if user.is_authenticated == False %}
 
           <a href="signup" style="display: flex; border-radius: 8px; height: 40px; width: 120px; background-image: linear-gradient(120deg, #8e2de2, #4a00e0); border: none;">
-            <p style="color: white; margin: auto; font-weight: 600; text-transform: uppercase;">JOIN US</p>
+            <p style="color: white; margin: auto; font-weight: 600; text-transform: uppercase;">SIGN UP</p>
           </a>
 
           {% endif %}
@@ -114,4 +121,5 @@
   <script src="{% static 'js/vendors.js' %}"></script>
 
 </body>
+
 </html>
