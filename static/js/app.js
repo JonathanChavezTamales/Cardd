@@ -1,6 +1,6 @@
 var modal = document.getElementById('modal_create-account');
 
-var button = document.getElementById('cards-add_card_button');
+var button = document.getElementById('cards-add_card');
 
 var span = document.getElementsByClassName('close_button')[0];
 
