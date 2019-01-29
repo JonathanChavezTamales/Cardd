@@ -3,31 +3,9 @@
 {% block content %}
 
 <section class="profile">
-  <div id="profile_info">
 
-    {%if detailed.extra_data.access_token.screen_name != null %}
+  {% include './profile_info.html' %}
 
-    <img style="border-radius: 50%;" src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original"
-      alt="User profile pic">
-
-    {% endif %}
-
-
-    {%if detailed.extra_data.access_token.screen_name == null %}
-
-    <img style="border-radius: 50%;" src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
-      alt="User profile pic">
-
-    {% endif %}
-
-    <h3>{{user.username}}</h3>
-    <h4>User @ Cardd</h4>
-
-    <div id="card-count">
-      <h3>{{cards.count}}</h3>
-      <h4>cards</h4>
-    </div>
-  </div>
   <div id="profile_cards">
 
     {% if user.username == request.user.username %}

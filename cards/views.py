@@ -14,7 +14,7 @@ def all_cards_view(request):
     if request.user.is_authenticated:
         detailed_user = UserSocialAuth.objects.get(id = request.user.id)
 
-        ctx['detailed'] = detailed_user
+        ctx['duser'] = detailed_user
 
     cards = Card.objects.filter(isPublic=True).order_by('-id')[:10]
 

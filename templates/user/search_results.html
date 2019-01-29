@@ -1,0 +1,32 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+
+<a href="user/{{user.id}}" target="_parent">
+  <div id="profile_info">
+
+    {%if detailed.extra_data.access_token.screen_name != null %}
+
+    <img style="border-radius: 50%;" src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original"
+      alt="User profile pic">
+
+    {% endif %}
+
+
+    {%if detailed.extra_data.access_token.screen_name == null %}
+
+    <img style="border-radius: 50%;" src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
+      alt="User profile pic">
+
+    {% endif %}
+
+    <h3>{{user.username}}</h3>
+    <h4>#{{duser.id}}</h4>
+
+</a>
+
+
+
+
+{% endblock %}

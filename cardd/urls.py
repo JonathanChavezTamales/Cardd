@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from cards.views import all_cards_view, new_card_view
-from user.views import my_user_view, signup_view, user_view
+from user.views import my_user_view, signup_view, user_view, search_results
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
 from django.http import HttpResponseRedirect
@@ -38,6 +38,7 @@ urlpatterns = [
     path('me', my_user_view),
     path('user/<int:uid>', user_view),
     path('signup', signup_view),
+    path('search', search_results),
 
     #Cards
     path('new_card', new_card_view),
