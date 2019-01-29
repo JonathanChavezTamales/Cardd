@@ -1,4 +1,6 @@
 .venv
+venv
+.vscode
 *.pyc
 __pycache__/
 *.jpeg
