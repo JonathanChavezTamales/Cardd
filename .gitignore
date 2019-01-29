@@ -6,3 +6,5 @@ __pycache__/
 *.png
 *.sqlite3
 *.swp
+.vscode
+venv
