@@ -382,6 +382,14 @@ hr {
 .show {
   display: block; }
 
+@media only screen and (max-width: 570px) {
+  #navbar-wrapper {
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
 /* CARDS */
 #cards {
   margin-top: 40px; }
