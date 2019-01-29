@@ -691,6 +691,8 @@ input[type="checkbox"] + label:after {
   -ms-filter: blur(5px);
   filter: blur(5px); }
 
+/* PROFILE */
+
 .profile {
   display: grid;
   grid-template-columns: 28% 72%;
@@ -703,7 +705,7 @@ input[type="checkbox"] + label:after {
   border-radius: 8px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
   display: block;
-  max-height: 380px;
+  max-height: 345px;
   text-align: center; }
   #profile_info h3,
   #profile_info h4,
@@ -725,17 +727,19 @@ input[type="checkbox"] + label:after {
   #profile_info img {
     margin: 0 auto;
     height: 100px;
-    width: 100px; }
+    width: 100px;
+    box-shadow: none; }
 
 #card-count {
   margin-top: 35px; }
 
 #profile_cards {
   align-content: space-between;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
   flex-wrap: wrap;
   align-content: flex-start;
-  grid-row-gap: 10px;
+  gap: 45px 0px;
   margin: 50px 20px; }
 
 .card-text {
@@ -764,3 +768,27 @@ input[type="checkbox"] + label:after {
   .card-delete_button svg {
     height: 7px;
     width: 7px; }
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1039px) {
+  #profile_cards {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  #profile_cards {
+    justify-content: center;
+    gap: 80px;
+  }
+  .profile {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #profile_cards {
+    grid-template-columns: auto;
+    gap: 40px;
+  }
+}

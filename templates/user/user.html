@@ -5,35 +5,34 @@
 <section class="profile">
   <div id="profile_info">
 
-      {%if detailed.extra_data.access_token.screen_name != null %}
+    {%if detailed.extra_data.access_token.screen_name != null %}
 
-      <img style="border-radius: 50%; box-shadow: 2px 4px 4px #888;" src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original" alt="User profile pic">
+    <img style="border-radius: 50%;" src="https://avatars.io/twitter/{{detailed.extra_data.access_token.screen_name}}/profile_image?size=original"
+      alt="User profile pic">
 
-      {% endif %}
+    {% endif %}
 
 
-      {%if detailed.extra_data.access_token.screen_name == null %}
+    {%if detailed.extra_data.access_token.screen_name == null %}
 
-      <img style="border-radius: 50%;" src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="User profile pic">
+    <img style="border-radius: 50%;" src="https://www.r-users.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
+      alt="User profile pic">
 
-      {% endif %}
+    {% endif %}
 
-      <h3>{{user.username}}</h3>
-      <h4>User @ Cardd</h4>
-      <h5>Jalisco, Mexico</h5>
+    <h3>{{user.username}}</h3>
+    <h4>User @ Cardd</h4>
 
-      <div id="card-count">
-          <h3>{{cards.count}}</h3>
-          <h4>cards</h4>
-      </div>
+    <div id="card-count">
+      <h3>{{cards.count}}</h3>
+      <h4>cards</h4>
+    </div>
   </div>
   <div id="profile_cards">
 
     {% if user.username == request.user.username %}
 
-    <button type="button" name="button" id="cards-add_card_button">
-      +
-    </button>
+    {% include 'cards/new_card_card.html' %}
 
     {% endif %}
 
