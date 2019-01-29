@@ -422,6 +422,27 @@ hr {
 .card:hover {
   transform: scale(1.05); }
 
+@media only screen and (max-width: 1200px){
+  #wrapper-cards {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  #wrapper-cards {
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: 60px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  #wrapper-cards {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+
 /* MODAL */
 #cards-add_card {
   box-shadow: none;
