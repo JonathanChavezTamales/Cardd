@@ -28,6 +28,7 @@ from django.views.generic import TemplateView
 
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -53,4 +54,4 @@ urlpatterns = [
     url('503', TemplateView.as_view(template_name='errors/503.html'),
     name='503')
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -3,6 +3,8 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from social_django.models import UserSocialAuth
 from cards.models import Card
+from cards.forms import CardForm
+
 # Create your views here.
 
 def my_user_view(request):
@@ -21,6 +23,23 @@ def my_user_view(request):
                 'duser':duser,
                 'detailed':duser
             }
+
+
+
+            if request.method == 'POST':
+                form = CardForm(request.POST)
+
+                if form.is_valid:
+                    card = form.save(commit=False)
+                    card.user = User.objects.get(id = request.user.id)
+                    card.save()
+                    return HttpResponseRedirect("home")
+
+
+            else:
+                form = CardForm()
+
+            ctx['form'] = form
 
             return render(request,"user/user.html", ctx)
 
@@ -64,20 +83,25 @@ def signup_view(request):
 
 def search_results(request):
 
-    query = request.GET.get('q')
+    try:
 
-    ctx = {'query':query}
+        query = request.GET.get('q')
 
-    detailed = UserSocialAuth.objects.get(id = query)
+        ctx = {'query':query}
 
-    user = User.objects.get(id=query)
+        detailed = UserSocialAuth.objects.get(id = query)
 
-    ctx['detailed'] = detailed
-    ctx['user'] = user
+        user = User.objects.get(id=query)
 
-    if request.user.is_authenticated:
-        duser = UserSocialAuth.objects.get(id = request.user.id)
+        ctx['detailed'] = detailed
+        ctx['user'] = user
 
-        ctx['duser'] = duser
+        if request.user.is_authenticated:
+            duser = UserSocialAuth.objects.get(id = request.user.id)
 
-    return render(request, "user/search_results.html", ctx)
+            ctx['duser'] = duser
+
+        return render(request, "user/search_results.html", ctx)
+
+    except:
+        return render(request, "errors/404.html", {})
