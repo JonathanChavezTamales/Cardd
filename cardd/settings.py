@@ -8,6 +8,14 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
+
+Logos
+
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/ZgmFVH5/logo-final-2.png" alt="logo-final-2" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/JR05f4V/logo-2x.png" alt="logo-2x" border="0"></a>
+<a href="https://ibb.co/j3fWTt8"><img src="https://i.ibb.co/YfQy3gN/logo-3x.png" alt="logo-3x" border="0"></a>
+
+
 """
 
 import os
@@ -34,6 +42,7 @@ INSTALLED_APPS = [
 
     #Extra
     'social_django',
+    'widget_tweaks',
 
     #Own
     'user',
@@ -53,6 +62,7 @@ MIDDLEWARE = [
 
     #Extra
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'cardd.urls'
@@ -141,6 +151,9 @@ LOGOUT_REDIRECT_URL = '/home'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 
 ## PRODUCTION

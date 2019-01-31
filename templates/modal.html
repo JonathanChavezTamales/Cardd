@@ -1,3 +1,5 @@
+{% load widget_tweaks %}
+
 <div class="modal" id="modal_create-account">
   <div class="modal-content">
     <span class="close_button">&times;</span>
@@ -5,16 +7,27 @@
 
     <div id="modal_inputs" style="text-align: center;">
 
-      <form class="">{%csrf_token%}
+      <form class="" method="POST">{%csrf_token%}
 
-        <input type="text" class="modal_input" id="modal_input_name" placeholder="Name*">
-        <input type="text" class="modal_input" id="modal_input_position" placeholder="Current role*">
-        <input type="text" class="modal_input" id="modal_input_company" placeholder="Company*">
-        <input type="text" class="modal_input" id="modal_input_email" placeholder="Email*">
-        <input type="text" class="modal_input" id="modal_input_phone" placeholder="Phone number">
+        {{ form.non_field_errors }}
+
+        {{form.name.errors}}
+        {{form.name|attr:'placeholder:Name'}}
+
+        {{form.email.errors}}
+        {{form.email|attr:'placeholder:Email'}}
+
+        {{form.position.errors}}
+        {{form.position|attr:'placeholder:Position'}}
+
+        {{form.company.errors}}
+        {{form.company|attr:'placeholder:Company'}}
+
+        {{form.phone.errors}}
+        {{form.phone|attr:'placeholder:Phone number'}}
 
         <div id="radio-buttons">
-          <input id="isPublic" type="checkbox" name="card_state" value="Publics" checked>
+          {{form.isPublic}}
           <label for="isPublic">Public</label>
         </div>
 
@@ -28,7 +41,7 @@
 
         {% if user.is_authenticated == True %}
 
-        <button href="signup" id="modal_create-card">Create card</a>
+        <button value="Save" type="submit" id="modal_create-card">Create card</a>
 
           {% endif %}
 

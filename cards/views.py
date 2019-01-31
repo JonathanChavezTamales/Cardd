@@ -16,7 +16,7 @@ def all_cards_view(request):
 
         ctx['duser'] = detailed_user
 
-    cards = Card.objects.filter(isPublic=True).order_by('-id')[:10]
+    cards = Card.objects.filter(isPublic=True).order_by('-date')[:10]
 
     if request.method == 'POST':
         form = CardForm(request.POST)
