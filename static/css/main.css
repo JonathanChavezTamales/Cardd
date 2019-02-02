@@ -720,6 +720,20 @@ input[type="checkbox"] + label:after {
   -ms-filter: blur(5px);
   filter: blur(5px); }
 
+
+  @media only screen and (max-width: 700px) {
+    #background-card1,
+    #background-card2,
+    #background-card3,
+    #background-card4,
+    #background-card5,
+    #background-card6,
+    #background-card7 {
+      display: none;
+    }
+
+  }
+
 /* PROFILE */
 
 .profile {
